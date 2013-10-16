@@ -1,0 +1,159 @@
+/*Definition des polices personnalisees
+
+@fontface{
+	font-family: 'Broadway';
+	src:url('polices/BROADW.TTF)format('truetype');
+}*/
+
+/*Banniere et entete de page*/
+header{
+	height:400px;
+	background-image:url(../images/cinepose.png);
+	padding: 2%;
+}
+
+header h1{
+	font-size:50px;
+}
+
+header h2{
+	font-size:22px;
+}
+
+header li{
+	text-align: center;
+	display: inline-block;
+	margin-right:2%;
+}
+
+#description{
+	margin-top:40px;
+}
+
+/*Elements principaux de la page*/
+body{
+	background-image:url(../images/ban.jpg);
+}
+
+#bloc{
+	width:1195px;
+	margin: auto;
+	color: #CC0000;
+	font-family:'trebuchet MS';
+	text-align: justify;
+	background-color:rgba(0, 0, 0, 0.5);
+}
+
+header, footer{
+	width:1185px;
+	margin: auto;
+	color: #CC0000;
+	font-family:Broadway;
+	text-align: left;
+	padding: 5px;
+}
+
+/*navigation*/
+nav{
+    display: inline-block;
+    width: 1150px;
+    text-align: right;
+	margin-top: 90px;
+	padding-right: 0px;
+}
+ 
+nav ul{
+    list-style-type: none;
+}
+ 
+nav li{
+    display: inline-block;
+    margin-right: 2%;
+}
+
+nav a{
+    padding-bottom: 2px;
+    text-decoration: none;
+	font-family: Broadway, monospace;
+	font-size: 20px;
+	color: #CC0000;
+}
+
+nav a:hover{
+    color: #760001;
+    border-bottom: 3px solid #760001;
+}
+
+/*corps de la page*/
+section h1{
+	font-family: Broadway, monospace;
+	font-size: 24px;
+	color: #CC0000;
+}
+
+section h2{
+	margin-left:350px;
+	font-size:16px;
+}
+
+section a{
+	padding-bottom: 2px;
+	color: #CC0000;
+}
+
+section a:hover{
+    color: #760001;
+}
+
+section{
+	margin: 30px 0.1% 0 0.5%;
+}
+
+/*Carte avec liens*/
+#map, aside {
+	display: inline-block;
+	vertical-align: top;
+    text-align: justify;
+	border-radius: 10px;
+	background-color: #FFFFCC;
+	padding: 1%;
+}
+#map{
+	width: 520px;
+    margin-right: 0.6%;
+}
+
+map .img{
+	background-image:url(../images/icon.jpg);
+}
+aside{
+	width:50%;
+	height: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+p{
+	border: 2px #CC0000 solid;
+	background-color: #FF9F82;
+}
+
+aside p {
+	height:80px;
+}
+
+/*pied de page*/
+footer{
+	padding-top: 50%;
+	text-align: center;
+}
+
+.link a{
+	text-align: center;
+	font-family: Broadway, monospace;
+	color: #CC0000;
+}
+
+.link a:hover{
+    color: #760001;
+}

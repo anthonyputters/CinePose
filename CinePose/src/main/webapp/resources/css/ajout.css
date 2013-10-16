@@ -1,0 +1,90 @@
+/*Definition des polices personnalisees
+
+@fontface{
+	font-family: 'Broadway';
+	src:url('polices/BROADW.TTF)format('truetype');
+}*/
+
+/*Banniere et entete de page*/
+header{
+	text-align: center;
+	height:250px;
+	background-image:url(../images/cinepose.png);
+}
+
+/*Elements principaux de la page*/
+body{
+	background-image:url(../images/ban.jpg);
+}
+
+#bloc{
+	width:1195px;
+	margin: auto;
+	color: #CC0000;
+	font-family:'trebuchet MS';
+	text-align: justify;
+}
+
+header, footer{
+	width:1185px;
+	margin: auto;
+	color: #CC0000;
+	font-family:Broadway;
+	text-align: left;
+	padding: 5px;
+}
+
+/*navigation*/
+nav{
+    display: inline-block;
+    width: 1150px;
+    text-align: right;
+	margin-top: 160px;
+	padding-right: 0px;
+}
+ 
+nav ul{
+    list-style-type: none;
+}
+ 
+nav li{
+    display: inline-block;
+    margin-right: 2%;
+}
+
+nav a{
+    padding-bottom: 2px;
+    text-decoration: none;
+	font-family: Broadway, monospace;
+	font-size: 20px;
+	color: #CC0000;
+}
+
+nav a:hover{
+    color: #760001;
+    border-bottom: 3px solid #760001;
+}
+
+/*corps de la page*/
+
+section{
+	background-color:black;
+}
+
+
+
+/*pied de page*/
+footer{
+	padding-top: 50%;
+	text-align: center;
+}
+
+.link a{
+	text-align: center;
+	font-family: Broadway, monospace;
+	color: #CC0000;
+}
+
+.link a:hover{
+    color: #760001;
+}
