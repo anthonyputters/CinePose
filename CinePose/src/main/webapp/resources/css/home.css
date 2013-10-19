@@ -7,36 +7,42 @@
 
 /*Banniere et entete de page*/
 header{
-	height:400px;
-	background-image:url(../images/cinepose.png);
+	height:500px;
+	background-image:url(../img/cinema2.jpg);
+	background-size:cover;
 	padding: 2%;
 }
 
 header h1{
-	font-size:50px;
+	margin-top: 6%;
+	font-size: 50px;
+	text-align: center;
 }
 
 header h2{
-	font-size:22px;
-}
-
-header li{
+	font-size: 22px;
 	text-align: center;
-	display: inline-block;
-	margin-right:2%;
 }
 
 #description{
-	margin-top:40px;
+	line-height: 20px;
+	color: white;
+	text-align: justify;
+	background-color:rgba(0, 0, 0, 0.7);
+	padding: 2%;
+	margin-top:10px;
+	margin-left: 2%;
+	margin-right: 2%;
+	
 }
 
-/*Elements principaux de la page*/
 body{
-	background-image:url(../images/ban.jpg);
+	background-size:cover;
+	background-image:url(../img/ban1.jpg);
 }
 
 #bloc{
-	width:1195px;
+	width:1050px;
 	margin: auto;
 	color: #CC0000;
 	font-family:'trebuchet MS';
@@ -45,7 +51,7 @@ body{
 }
 
 header, footer{
-	width:1185px;
+	width:1050px;
 	margin: auto;
 	color: #CC0000;
 	font-family:Broadway;
@@ -56,10 +62,11 @@ header, footer{
 /*navigation*/
 nav{
     display: inline-block;
-    width: 1150px;
     text-align: right;
-	margin-top: 90px;
-	padding-right: 0px;
+	margin-top: 72px;
+	padding: 0px;
+	list-style-type : none; 
+	margin-left : 600px; 
 }
  
 nav ul{
@@ -68,20 +75,26 @@ nav ul{
  
 nav li{
     display: inline-block;
-    margin-right: 2%;
+    margin-right: 2.1%;
+	float: left;
+    height: 34px;
+    background-color: #8B020A;
+    margin: 0;
 }
 
 nav a{
-    padding-bottom: 2px;
+	display: block;
+	padding: 5px;
     text-decoration: none;
 	font-family: Broadway, monospace;
 	font-size: 20px;
-	color: #CC0000;
+	color: #FFFFCC;
 }
 
 nav a:hover{
-    color: #760001;
-    border-bottom: 3px solid #760001;
+    color: #FFFFB9;
+    border-bottom: 3px solid #FFFFB9;
+	background-color:#E41F30;
 }
 
 /*corps de la page*/
@@ -110,6 +123,20 @@ section{
 }
 
 /*Carte avec liens*/
+#paris_map {
+	text-align: center; 
+	margin-left: auto; 
+	margin-right: auto;
+	width:500px;
+	height:450px; 
+}
+
+#paris_map p {
+	border: none;
+	background-color: white;
+	text-align: left;
+}
+
 #map, aside {
 	display: inline-block;
 	vertical-align: top;
@@ -118,17 +145,20 @@ section{
 	background-color: #FFFFCC;
 	padding: 1%;
 }
+
 #map{
-	width: 520px;
-    margin-right: 0.6%;
+	width: 50%;
+    margin-right: 4%;
 }
 
-map .img{
-	background-image:url(../images/icon.jpg);
+section h2{
+	text-align: right;
+	margin-right:5px;
+	font-size:16px;
 }
+
 aside{
-	width:50%;
-	height: 100px;
+	width:40%;
     display: inline-block;
     vertical-align: top;
 }

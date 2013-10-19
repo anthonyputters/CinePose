@@ -9,12 +9,12 @@
 header{
 	text-align: center;
 	height:250px;
-	background-image:url(../images/cinepose.png);
+	background-image:url(../img/cinepose.png);
 }
 
 /*Elements principaux de la page*/
 body{
-	background-image:url(../images/ban.jpg);
+	background-image:url(../img/ban.jpg);
 }
 
 #bloc{
