@@ -1,11 +1,3 @@
-/*Definition des polices personnalisees
-
-@fontface{
-	font-family: 'Broadway';
-	src:url('polices/BROADW.TTF)format('truetype');
-}*/
-
-/*Banniere et entete de page*/
 header{
 	height:500px;
 	background-image:url(../img/cinema2.jpg);

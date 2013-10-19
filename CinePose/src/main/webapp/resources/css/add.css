@@ -1,90 +1,68 @@
-/*Definition des polices personnalisees
+#add_form {
+	margin: 0 auto;
+	padding: 14px;
+	border: solid 2px black;
+	background-color:rgba(0, 0, 0, 0.7);
+	width: 500px;
+}
 
-@fontface{
-	font-family: 'Broadway';
-	src:url('polices/BROADW.TTF)format('truetype');
-}*/
+#add_form .small {
+	color: #CC0000;
+	display: block;
+	font-size: 13px;
+	font-weight: normal;
+	text-align: right;
+	width: 170px;
+}
 
-/*Banniere et entete de page*/
-header{
+#add_form label {
+	color: white;
+	display: block;
+	font-weight: bold;
+	text-align: right;
+	font-size: 15px;
+	width: 170px;
+	float: left;
+}
+
+#add_form input {
+	float: left;
+	font-size: 12px;
+	padding: 4px 2px;
+	border: solid 1px #aacfe4;
+	width: 200px;
+	margin: 12px 0px 10px 10px;
+}
+
+#add_form select {
+	float: left;
+	padding: 3px 1px;
+	border: solid 1px #aacfe4;
+	width: 200px;
+	margin: 12px 0px 10px 10px;
+}
+
+#add_form button {
+	border: 0;
+	margin-top: 20px;
+	padding: 0;
+	clear: both;
+	margin-left: 150px;
+	width: 125px;
+	height: 31px;
+	background: #666666;
 	text-align: center;
-	height:250px;
-	background-image:url(../img/cinepose.png);
+	line-height: 31px;
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: bold;
 }
 
-/*Elements principaux de la page*/
-body{
-	background-image:url(../img/ban.jpg);
+#add_form .radio {
+	margin: 5px 8px 5px 10px; 
+	width: 20px;
 }
 
-#bloc{
-	width:1195px;
-	margin: auto;
-	color: #CC0000;
-	font-family:'trebuchet MS';
-	text-align: justify;
-}
-
-header, footer{
-	width:1185px;
-	margin: auto;
-	color: #CC0000;
-	font-family:Broadway;
-	text-align: left;
-	padding: 5px;
-}
-
-/*navigation*/
-nav{
-    display: inline-block;
-    width: 1150px;
-    text-align: right;
-	margin-top: 160px;
-	padding-right: 0px;
-}
- 
-nav ul{
-    list-style-type: none;
-}
- 
-nav li{
-    display: inline-block;
-    margin-right: 2%;
-}
-
-nav a{
-    padding-bottom: 2px;
-    text-decoration: none;
-	font-family: Broadway, monospace;
-	font-size: 20px;
-	color: #CC0000;
-}
-
-nav a:hover{
-    color: #760001;
-    border-bottom: 3px solid #760001;
-}
-
-/*corps de la page*/
-
-section{
-	background-color:black;
-}
-
-
-
-/*pied de page*/
-footer{
-	padding-top: 50%;
-	text-align: center;
-}
-
-.link a{
-	text-align: center;
-	font-family: Broadway, monospace;
-	color: #CC0000;
-}
-
-.link a:hover{
-    color: #760001;
+#add_form textarea {
+	margin: 10px 8px 5px 10px; 
 }

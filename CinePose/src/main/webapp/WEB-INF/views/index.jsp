@@ -3,6 +3,7 @@
 <meta charset="iso-8859-15" />
 <title>Cinepose - Accueil</title>
 <link rel="stylesheet" href="resources/css/home.css" type="text/css" />
+<link rel="stylesheet" href="resources/css/add.css" type="text/css" />
 <script type="text/javascript"
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6vLFVn_ICWGXT-p-19XvohsR9p09khHg&sensor=false"></script>
 <script src="resources/js/jquery-2.0.3.js"></script>
