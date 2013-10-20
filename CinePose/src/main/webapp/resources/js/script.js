@@ -27,8 +27,6 @@ function initialize() {
 	};
 	map = new google.maps.Map(document.getElementById("paris_map"),
 			mapOptions);
-
-	addMarkers(48.859, 2.335, "Cin&eacute;ma", "Cin&eacutema description", "4.0");
 }
 
 function addMarkers(lat, lon, name, description, mark) {
@@ -46,5 +44,17 @@ function addMarkers(lat, lon, name, description, mark) {
 
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.open(map,marker);});
+}
+
+function initializeAddMap() {
+	var centralLatlng = new google.maps.LatLng(48.859, 2.335);
+
+	var mapOptions = {
+			center: centralLatlng,
+			zoom: 12,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	var mapAdd = new google.maps.Map(document.getElementById("paris_map_add"),
+			mapOptions);
 }
 

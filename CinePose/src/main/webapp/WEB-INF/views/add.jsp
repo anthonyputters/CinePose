@@ -28,6 +28,12 @@
 							<option value="more_than_20">Plus de 20</option>
 					</select></td>
 				</tr>
+				<tr>
+					<td><label> Position <span class="small">
+								Positionner le cinéma<br> sur la carte </span>
+					</label></td>
+					<td><div id="paris_map_add"></div></td>
+				</tr>
 			</table>
 			<button type="submit">Ajouter</button>
 		</form>
@@ -46,7 +52,12 @@
 				<tr>
 					<td><label> Cinéma<span class="small">Choisir
 								parmi les cinémas</span></label></td>
-					<td><input type="text" name="prenom" id="prenom" /></td>
+					<td><select name="salle_nb">
+							<option value="cinema1">Cinema 1</option>
+							<option value="cinema2">Cinema 2</option>
+							<option value="cinema3">Cinema 3</option>
+							<option value="cinema4">Cinema 4</option>
+					</select></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -86,6 +97,26 @@
 						<input type="radio" class="radio" name="noise" value="5"></td>
 				</tr>
 				<tr>
+					<td><label> Propreté<span class="small"> Evaluez
+								la propreté des salles </span>
+					</label></td>
+					<td><input type="radio" class="radio" name="clean" value="1">
+						<input type="radio" class="radio" name="clean" value="2">
+						<input type="radio" class="radio" name="clean" value="3">
+						<input type="radio" class="radio" name="clean" value="4">
+						<input type="radio" class="radio" name="clean" value="5"></td>
+				</tr>
+				<tr>
+					<td><label> Prix<span class="small"> Evaluez
+								l'abordabilité des prix </span>
+					</label></td>
+					<td><input type="radio" class="radio" name="noise" value="1">
+						<input type="radio" class="radio" name="noise" value="2">
+						<input type="radio" class="radio" name="noise" value="3">
+						<input type="radio" class="radio" name="noise" value="4">
+						<input type="radio" class="radio" name="noise" value="5"></td>
+				</tr>
+				<tr>
 					<td><label> Commentaire <span class="small">
 								Vous pouvez rédiger un commentaire </span>
 					</label></td>
@@ -96,3 +127,4 @@
 		</form>
 	</div>
 </section>
+<script>initializeAddMap();</script>

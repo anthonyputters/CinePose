@@ -58,7 +58,7 @@ nav{
 	margin-top: 72px;
 	padding: 0px;
 	list-style-type : none; 
-	margin-left : 600px; 
+	margin-left : 580px; 
 }
  
 nav ul{
@@ -166,7 +166,6 @@ aside p {
 
 /*pied de page*/
 footer{
-	padding-top: 50%;
 	text-align: center;
 }
 
