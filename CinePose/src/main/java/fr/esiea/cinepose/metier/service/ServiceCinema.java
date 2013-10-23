@@ -1,6 +1,9 @@
 package fr.esiea.cinepose.metier.service;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 
 import fr.esiea.cinepose.data.DataBase;
@@ -23,5 +26,16 @@ public class ServiceCinema {
 
 	public static void addAvisToCinema(Cinema cinema, Avis avis) {
 		cinema.addAvis(avis);		
+	}
+	
+	public static List<Cinema> getRating() {
+		List<Cinema> sortedCinema = new ArrayList<Cinema>(DataBase.getCinemas());
+		Collections.sort(sortedCinema, new Comparator<Cinema>() {
+		    public int compare(Cinema cinema1, Cinema cinema2) {
+		        return (cinema1.getMark() > cinema2.getMark() ? -1 : (cinema1.getMark() == cinema2.getMark() ? 0 : 1));
+		    }
+		});
+		
+		return sortedCinema;
 	}
 }

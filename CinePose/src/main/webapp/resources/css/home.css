@@ -158,10 +158,7 @@ aside{
 p{
 	border: 2px #CC0000 solid;
 	background-color: #FF9F82;
-}
-
-aside p {
-	height:80px;
+	padding: 5px;
 }
 
 /*pied de page*/

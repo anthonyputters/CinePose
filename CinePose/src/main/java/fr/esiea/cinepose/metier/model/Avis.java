@@ -2,15 +2,18 @@ package fr.esiea.cinepose.metier.model;
 
 public class Avis {
 	private int confort;
-	private int choise;
+	private int choice;
 	private int noise;
 	private int clean;
 	private int price;
 	private String comment;
-	
+
+	public Avis() {
+	}
+
 	public Avis(int confort, int choise, int noise, int clean, int price, String comment) {
 		this.confort = confort;
-		this.choise = choise;
+		this.choice = choise;
 		this.noise = noise;
 		this.clean = clean;
 		this.price = price;
@@ -25,12 +28,12 @@ public class Avis {
 		this.confort = confort;
 	}
 	
-	public int getChoise() {
-		return choise;
+	public int getChoice() {
+		return choice;
 	}
 	
-	public void setChoise(int choise) {
-		this.choise = choise;
+	public void setChoice(int choise) {
+		this.choice = choise;
 	}
 	
 	public int getNoise() {
@@ -63,5 +66,28 @@ public class Avis {
 	
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public double getMark() {
+		return (double) (confort + choice + noise + clean + price) / 5.0;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Avis [confort=");
+		builder.append(confort);
+		builder.append(", choice=");
+		builder.append(choice);
+		builder.append(", noise=");
+		builder.append(noise);
+		builder.append(", clean=");
+		builder.append(clean);
+		builder.append(", price=");
+		builder.append(price);
+		builder.append(", comment=");
+		builder.append(comment);
+		builder.append("]");
+		return builder.toString();
 	}
 }

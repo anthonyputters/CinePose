@@ -4,8 +4,9 @@
 <title>Cinepose - Accueil</title>
 <link rel="stylesheet" href="resources/css/home.css" type="text/css" />
 <link rel="stylesheet" href="resources/css/add.css" type="text/css" />
-<script type="text/javascript"
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6vLFVn_ICWGXT-p-19XvohsR9p09khHg&sensor=false"></script>
+<!-- <script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6vLFVn_ICWGXT-p-19XvohsR9p09khHg&sensor=false&libraries=places"></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 <script src="resources/js/jquery-2.0.3.js"></script>
 <script src="resources/js/script.js"></script>
 </head>
@@ -27,9 +28,9 @@
 				<div id="description">
 					Salle trop petite, siège peu confortable, grâce aux moteurs de
 					recherche actuels, on peut trouver les cinémas les plus proches...
-					mais pas forcément les plus confortables!! </br> La qualité d'une séance
+					mais pas forcément les plus confortables!! <br> La qualité d'une séance
 					de cinéma ne se jauge pas seulement au film seul, mais également à
-					la salle même. </br> Trouvez le cinéma parfait, c'est possible!!
+					la salle même. <br> Trouvez le cinéma parfait, c'est possible!!
 				</div>
 			</header>
 
