@@ -1,4 +1,4 @@
-package fr.esiea.cinepose.data;
+﻿package fr.esiea.cinepose.data;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -66,7 +66,7 @@ public class Persistence {
 		}
 		catch (IOException e)
 		{
-			System.out.println("Impossible d'�crire dans les fichiers de sauvegarde");
+			System.out.println("Impossible d'écrire dans les fichiers de sauvegarde");
 		}
 	}
 

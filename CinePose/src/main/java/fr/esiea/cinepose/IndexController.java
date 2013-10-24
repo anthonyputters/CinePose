@@ -1,4 +1,4 @@
-package fr.esiea.cinepose;
+ï»¿package fr.esiea.cinepose;
 
 import java.util.Locale;
 
@@ -25,19 +25,19 @@ public class IndexController {
 			Persistence.readData();
 		}
 		else {
-			// Ajout de quelques cinémas et avis pour tester le site
-			Cinema grand_rex = ServiceCinema.createCinema("Le Grand Rex", "1 Boulevard Poissonnière, Paris, France", "Entre 5 et 10", 48.870564f, 2.3474872f);
+			// Ajout de quelques cinÃ©mas et avis pour tester le site
+			Cinema grand_rex = ServiceCinema.createCinema("Le Grand Rex", "1 Boulevard PoissonniÃ¨re, Paris, France", "Entre 5 et 10", 48.870564f, 2.3474872f);
 			Cinema gaumont_gobelin = ServiceCinema.createCinema("Gaumont Gobelins", "58 Avenue des Gobelins, Paris, France", "Moins de 5", 48.83355f, 2.353861f);
 			Cinema arlequin = ServiceCinema.createCinema("L'Arlequin", "76 Rue de Rennes, Paris, France", "Entre 10 et 20", 48.851105f, 2.3306463f);
 			Cinema ugc_montparnasse = ServiceCinema.createCinema("UGC Montparnasse", "83 Boulevard du Montparnasse, Paris, France", "Entre 10 et 20", 48.84342f, 2.3253179f);
-			Cinema mk2_bibliotheque = ServiceCinema.createCinema("MK2 Bibliothèque", "128 Avenue de France, Paris, France", "Plus de 20", 48.8332f, 2.3745792f);
+			Cinema mk2_bibliotheque = ServiceCinema.createCinema("MK2 BibliothÃ¨que", "128 Avenue de France, Paris, France", "Plus de 20", 48.8332f, 2.3745792f);
 
-			ServiceAvis.addAvis(grand_rex, 5, 5, 4, 5, 4, "Très belle salle ! Les fauteuils sont hypers confortables.");
-			ServiceAvis.addAvis(gaumont_gobelin, 3, 3, 4, 4, 4, "Très calme, mais pas beaucoup de choix.");
-			ServiceAvis.addAvis(arlequin, 3, 5, 4, 4, 3, "Facile d'accès en métro. Plutôt porté sur les films d'art et d'essais mais la selection est très bien faite.");
-			ServiceAvis.addAvis(ugc_montparnasse, 4, 3, 3, 5, 4, "Un cinéma acceuillant, dans un très belle endroit !");
-			ServiceAvis.addAvis(mk2_bibliotheque, 4, 5, 3, 4, 5, "Beaucoup de choix et de Salles. Tarifs très intéressants.");
-			ServiceAvis.addAvis(mk2_bibliotheque, 5, 5, 3, 4, 4, "Salles très confortables.");
+			ServiceAvis.addAvis(grand_rex, 5, 5, 4, 5, 4, "TrÃ¨s belle salle ! Les fauteuils sont hypers confortables.");
+			ServiceAvis.addAvis(gaumont_gobelin, 3, 3, 4, 4, 4, "TrÃ¨s calme, mais pas beaucoup de choix.");
+			ServiceAvis.addAvis(arlequin, 3, 5, 4, 4, 3, "Facile d'accÃ¨s en mÃ©tro. PlutÃ´t portÃ© sur les films d'art et d'essais mais la selection est trÃ¨s bien faite.");
+			ServiceAvis.addAvis(ugc_montparnasse, 4, 3, 3, 5, 4, "Un cinÃ©ma acceuillant, dans un trÃ¨s belle endroit !");
+			ServiceAvis.addAvis(mk2_bibliotheque, 4, 5, 3, 4, 5, "Beaucoup de choix et de Salles. Tarifs trÃ¨s intÃ©ressants.");
+			ServiceAvis.addAvis(mk2_bibliotheque, 5, 5, 3, 4, 4, "Salles trÃ¨s confortables.");
 		}
 		
 		return "index";
