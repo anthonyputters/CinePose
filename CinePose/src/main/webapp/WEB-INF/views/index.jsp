@@ -2,8 +2,8 @@
 <head>
 <meta charset="iso-8859-15" />
 <title>Cinepose - Accueil</title>
-<link rel="stylesheet" href="resources/css/home.css" type="text/css" />
-<link rel="stylesheet" href="resources/css/add.css" type="text/css" />
+<link rel="stylesheet" href="resources/css/style.css" type="text/css" />
+<link rel="stylesheet" href="resources/css/form_style.css" type="text/css" />
 <!-- <script type="text/javascript"
 	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6vLFVn_ICWGXT-p-19XvohsR9p09khHg&sensor=false&libraries=places"></script> -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
@@ -22,7 +22,7 @@
 						<li><a href="javascript:openLink('home')">Accueil</a></li>
 						<li><a href="javascript:openLink('add')">Ajouter</a></li>
 						<li><a href="javascript:openLink('search')">Rechercher</a></li>
-						<li><a href="javascript:openLink('about')">Contact</a></li>
+						<li><a href="javascript:openLink('contact')">Contact</a></li>
 					</ul>
 				</nav>
 				<div id="description">

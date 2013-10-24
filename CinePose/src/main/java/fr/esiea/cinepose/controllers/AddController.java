@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import fr.esiea.cinepose.data.DataBase;
+import fr.esiea.cinepose.data.Persistence;
 import fr.esiea.cinepose.metier.model.Avis;
 import fr.esiea.cinepose.metier.model.Cinema;
 import fr.esiea.cinepose.metier.service.ServiceCinema;
@@ -28,6 +29,8 @@ public class AddController {
 	@RequestMapping(value = "/addCinema", method = RequestMethod.POST)
 	public String addCinema(@ModelAttribute("cinema") Cinema cinema, ModelMap model) {
 		DataBase.addCinema(cinema);
+		Persistence.writeData();
+		
 		return "redirect:";
 	}
 
@@ -40,6 +43,8 @@ public class AddController {
 			Cinema cinema = (Cinema) correspondingCinemas.toArray()[0];
 			ServiceCinema.addAvisToCinema(cinema, avis);
 		}
+		
+		Persistence.writeData();
 		
 		return "redirect:";
 	}

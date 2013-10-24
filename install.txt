@@ -1,0 +1,43 @@
+Login : root
+Password : pass
+
+dpkg --list|grep -i jdk // Chercher parmi les paquets installés
+sudo apt-cache jdk	// Chercher parmi les paquets installables
+
+
+sudo apt-get install openjdk-7-jdk
+sudo apt-get install maven
+sudo apt-get install apache2
+sudo apt-get install tomcat7 tomcat7-examples
+sudo apt-get install libapache2-mod-jk
+
+Create file /etc/apache2/workers.properties with the following content:
+worker.list=worker1
+worker.worker1.type=ajp13
+worker.worker1.host=localhost
+worker.worker1.port=8009
+
+
+Create file /etc/apache2/mods-available/jk.conf with the following content:
+JkWorkersFile	/etc/apache2/workers.properties
+JkShmFile	/var/log/apache2/mod_jk.shm
+JkLogFile	/var/log/apache2/mod_jk.log
+JkLogLevel	info
+
+a2enmod jk
+
+Add mount point to /etc/apache2/sites-available/default:
+<VirtualHost *:80>
+	...
+	JkMount		/examples/* worker1
+	...
+</VirtualHost>
+
+Uncomment the following line in /etc/tomcat6/server.xml:
+<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
+
+/etc/init.d/tomcat7 restart
+/etc/init.d/apache2 restart
+
+
+git clone https://github.com/anthonyputters/CinePose cinepose

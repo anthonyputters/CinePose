@@ -75,3 +75,23 @@
 	width:300px;
 	height:250px; 
 }
+
+.error {
+	color: #EE0000;
+	background-color: #EECCCC;
+	font-weight:bold;
+}
+
+.error_div {
+	visibility: hidden;
+	color: #EE0000;
+	font-weight:bold;
+	text-align:left;
+	font-size: 12px;
+	padding: 0px 4px 0px 4px;
+	border: solid 1px #AABBBF;
+	background-color: rgba(11, 11, 11, 0.7);
+	width: 190px;
+	margin: 0px 0px 0px 10px;
+	
+}

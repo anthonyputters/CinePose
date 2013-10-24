@@ -175,3 +175,19 @@ footer{
 .link a:hover{
     color: #760001;
 }
+
+
+.result {
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 10px;
+	background-color: #FFFFCC;
+	padding: 1%;
+	margin: 10px;
+}
+
+.contact_form_class {
+	margin:auto;
+	width:30%;
+	height:50%
+}

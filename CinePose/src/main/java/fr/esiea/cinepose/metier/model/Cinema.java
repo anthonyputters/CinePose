@@ -16,10 +16,12 @@ public class Cinema {
 		avis = new HashSet<Avis>();
 	}
 
-	public Cinema(String name, String address, String salleNb) {
+	public Cinema(String name, String address, String salleNb, float latitude, float longitude) {
 		this.name = name;
 		this.address = address;
 		this.salleNb = salleNb;
+		this.latitude = latitude;
+		this.longitude = longitude;
 		avis = new HashSet<Avis>();
 	}
 
@@ -35,6 +37,66 @@ public class Cinema {
 		return mark / ((double) avis.size());
 	}
 	
+	public double getChoiceMark() {
+		double mark = 0.0;
+		
+		if(avis.isEmpty())
+			return 0.0;
+		
+		for (Iterator<Avis> iterator = avis.iterator(); iterator.hasNext();)
+			mark += ((Avis) iterator.next()).getChoice();
+		
+		return mark / ((double) avis.size());
+	}
+
+	public double getCleanMark() {
+		double mark = 0.0;
+		
+		if(avis.isEmpty())
+			return 0.0;
+		
+		for (Iterator<Avis> iterator = avis.iterator(); iterator.hasNext();)
+			mark += ((Avis) iterator.next()).getClean();
+		
+		return mark / ((double) avis.size());
+	}
+	
+	public double getConfortMark() {
+		double mark = 0.0;
+		
+		if(avis.isEmpty())
+			return 0.0;
+		
+		for (Iterator<Avis> iterator = avis.iterator(); iterator.hasNext();)
+			mark += ((Avis) iterator.next()).getConfort();
+		
+		return mark / ((double) avis.size());
+	}
+
+	public double getNoiseMark() {
+		double mark = 0.0;
+		
+		if(avis.isEmpty())
+			return 0.0;
+		
+		for (Iterator<Avis> iterator = avis.iterator(); iterator.hasNext();)
+			mark += ((Avis) iterator.next()).getNoise();
+		
+		return mark / ((double) avis.size());
+	}
+
+	public double getPriceMark() {
+		double mark = 0.0;
+		
+		if(avis.isEmpty())
+			return 0.0;
+		
+		for (Iterator<Avis> iterator = avis.iterator(); iterator.hasNext();)
+			mark += ((Avis) iterator.next()).getPrice();
+		
+		return mark / ((double) avis.size());
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -90,7 +152,7 @@ public class Cinema {
 	public String getLastComment() {
 		if(avis.isEmpty())
 			return "Pas encore d'avis";
-		return ((Avis) avis.toArray()[avis.size()-1]).getComment();
+		return ((Avis) avis.toArray()[0]).getComment();
 	}
 	
 	@Override

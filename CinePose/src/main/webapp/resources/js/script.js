@@ -7,7 +7,7 @@ function updateMenu(id) {
 function openLink(givenUrl) {
 	$.ajax({
 		url : givenUrl,
-		method: "GET",          
+		method: "GET",
 		success : function(response) {
 			$('#corps').html(response);
 		}
@@ -15,7 +15,83 @@ function openLink(givenUrl) {
 }
 
 function validateAddCinemaForm() {
+	var validateName = validateNameFromAddCinemaForm();
+	var validateAddress = validateAddressFromAddCinemaForm();
+	
+	return validateName && validateAddress;
+}
+
+function validateNameFromAddCinemaForm() {
+	var champ = document.getElementById("name");
+	if(champ.value.length < 2) {
+		champ.className = "error";
+		showErrorMessage("name", "Vous devez saisir au moins 2 caractères");
+      	return false;
+	}
+	if(champ.value.length > 20) {
+		champ.className = "error";
+		showErrorMessage("name", "Vous devez saisir moins de 20 caractères");
+      	return false;
+	}
+	hideErrorMessage("name");
 	return true;
+}
+
+function validateAddressFromAddCinemaForm() {
+	var champ = document.getElementById("address");
+	var latitude = document.getElementById("latitude");
+	var longitude = document.getElementById("longitude");
+
+	// Nous devons vérifier si Google Map à réussi à localiser l'adresse donnée par l'utilisateur
+	// Pour cela, nous vérifions simplement si les champs cachés longitude et latitude ont été remplis
+	if((latitude.value == "0.0") && (longitude.value == "0.0")) {
+		champ.className = "error";
+		showErrorMessage("address", "L'adresse que vous avez entrée n'existe pas");
+      	return false;
+	}
+	
+	hideErrorMessage("address");
+	return true;
+}
+
+function validateAddAvisForm() {
+	var champ = document.getElementById("addAvisForm");
+	var validateChoice = validateMarkFromAddAvisForm("choice", champ.choice);
+	var validateClean = validateMarkFromAddAvisForm("clean", champ.clean);
+	var validateConfort = validateMarkFromAddAvisForm("confort", champ.confort);
+	var validateNoise = validateMarkFromAddAvisForm("noise", champ.noise);
+	var validatePrice = validateMarkFromAddAvisForm("price", champ.price);
+
+	return validateChoice && validateClean && validateConfort && validateNoise && validatePrice;
+}
+
+function validateMarkFromAddAvisForm(name, radioGroup) {
+	for(var i = 0 ; i < 5 ; i++) {
+		if(radioGroup[i].checked) {
+			hideErrorMessage(name);
+			return true;
+		}
+	}
+	
+	showErrorMessage(name, "Vous devez entrer une note");
+	return false;
+}
+
+function showErrorMessage(id, msg) {
+	document.getElementById(id+"_error").style.visibility = "visible";
+	document.getElementById(id+"_error").innerHTML = msg;
+}
+
+function hideErrorMessage(id) {
+	document.getElementById(id+"_error").style.visibility="hidden";
+}
+
+function sendSearchFormData() {
+	var searchCinemaForm = document.getElementById("searchCinemaForm");
+	var name = searchCinemaForm.name.value;
+	var address = searchCinemaForm.address.value;
+		
+	openLink("searchCinema?name="+name+"&address="+address);
 }
 
 /* Fonctions relatives à la carte google map sur la page d'acceuil */
@@ -34,7 +110,7 @@ function initialize() {
 }
 
 function addMarkers(lat, lon, name, description, mark) {
-	var contentString = '<b><a href="javascript:openLink(\'cinema\')">'+name+'</a></b>'+'<p>'+description+'<br>'+'Note : '+mark+'</p>';
+	var contentString = '<b><a href="javascript:openLink(\'cinema?cinema_name='+name+'\')">'+name+'</a></b>'+'<p>'+description+'<br>'+'Note : '+mark+'</p>';
 
 	var infowindow = new google.maps.InfoWindow({
 		content: contentString

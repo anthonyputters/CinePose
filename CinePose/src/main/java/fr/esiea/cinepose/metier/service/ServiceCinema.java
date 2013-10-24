@@ -11,9 +11,10 @@ import fr.esiea.cinepose.metier.model.Avis;
 import fr.esiea.cinepose.metier.model.Cinema;
 
 public class ServiceCinema {
-	public static void createCinema(String name, String address, String salleNb) {
-		Cinema cinema = new Cinema(name, address, salleNb);
+	public static Cinema createCinema(String name, String address, String salleNb, float latitude, float longitude) {
+		Cinema cinema = new Cinema(name, address, salleNb, latitude, longitude);
 		DataBase.addCinema(cinema);
+		return cinema;
 	}
 	
 	public static Set<Avis> getAllAvis(Cinema cinema) {
@@ -24,6 +25,10 @@ public class ServiceCinema {
 		return DataBase.search(nom);
 	}
 
+	public static Set<Cinema> search(String nom, String address) {
+		return DataBase.search(nom, address);
+	}
+	
 	public static void addAvisToCinema(Cinema cinema, Avis avis) {
 		cinema.addAvis(avis);		
 	}
