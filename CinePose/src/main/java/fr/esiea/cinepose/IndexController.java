@@ -1,4 +1,4 @@
-﻿package fr.esiea.cinepose;
+package fr.esiea.cinepose;
 
 import java.util.Locale;
 

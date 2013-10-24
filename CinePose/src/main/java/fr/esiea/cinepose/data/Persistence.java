@@ -1,4 +1,4 @@
-﻿package fr.esiea.cinepose.data;
+package fr.esiea.cinepose.data;
 
 import java.io.BufferedReader;
 import java.io.File;
