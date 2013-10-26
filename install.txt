@@ -1,24 +1,23 @@
-===============================================
-===   Procédure d'installation du projet    ===
-===============================================
+﻿===================================================
+=====   Procédure d'installation du projet    =====
+===================================================
 
------------   Récupérer le projet   -----------
+-------------   Récupérer le projet   -------------
+Dans le repertoire : /home/progweb/
 sudo apt-get install git
 git clone https://github.com/anthonyputters/CinePose
 
---------   Installations nécessaires   --------
+----------   Installations nécessaires   ----------
 sudo apt-get update
-sudo apt-get install openjdk-6-jdk
-sudo apt-get install maven
-sudo apt-get install tomcat7
-sudo apt-get install tomcat7-admin
+sudo apt-get install vim openjdk-6-jdk maven tomcat7 tomcat7-admin
 
---------   Procédure d'installation   ---------
+----------   Procédure d'installation   -----------
 Dans le repertoire de du projet (où se trouve le fichier pom.xml) :
+cd /home/progweb/CinePose/CinePose
 
-mv tomcat-users.xml /etc/tomcat/conf/tomcat-users.xml
+mv tomcat-users.xml /etc/tomcat7/tomcat-users.xml
 
-vim /etc/maven/settings.xml     
+vim /etc/maven/settings.xml
 ajouter le server suivant entre <servers> </servers>  :
 <server>
         <id>mytomcat</id>
@@ -28,5 +27,9 @@ ajouter le server suivant entre <servers> </servers>  :
 
 /etc/init.d/tomcat7 restart
 mvn clean
-mvn install
+mvn package
 mvn tomcat7:deploy
+
+============= Installation terminée ==============
+Le site est désormais accéssible à l'adresse :
+http://adresse.ip.du.server:8080/cinepose
