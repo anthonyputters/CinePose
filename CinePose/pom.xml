@@ -138,11 +138,22 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.6</source>
+                    <target>1.6</target>
                     <compilerArgument>-Xlint:all</compilerArgument>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <warFile>target/cinepose-1.0.0-BUILD-SNAPSHOT.war</warFile>
+                    <server>mytomcat</server>
+                    <url>http://localhost:8080/manager/text</url>
+                    <path>/cinepose</path>
                 </configuration>
             </plugin>
             <plugin>

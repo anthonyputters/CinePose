@@ -1,42 +1,32 @@
-Login : root
-Password : pass
+===============================================
+===   Procédure d'installation du projet    ===
+===============================================
 
-dpkg --list|grep -i jdk // Chercher parmi les paquets install�s
-sudo apt-cache jdk	// Chercher parmi les paquets installables
+-----------   Récupérer le projet   -----------
 sudo apt-get install git
-git clone https://github.com/anthonyputters/CinePose cinepose
+git clone https://github.com/anthonyputters/CinePose
 
-
-sudo apt-get install openjdk-7-jdk
+--------   Installations nécessaires   --------
+sudo apt-get update
+sudo apt-get install openjdk-6-jdk
 sudo apt-get install maven
-sudo apt-get install apache2
-sudo apt-get install tomcat7 tomcat7-examples
-sudo apt-get install libapache2-mod-jk
+sudo apt-get install tomcat7
+sudo apt-get install tomcat7-admin
 
-Create file /etc/apache2/workers.properties with the following content:
-worker.list=worker1
-worker.worker1.type=ajp13
-worker.worker1.host=localhost
-worker.worker1.port=8009
+--------   Procédure d'installation   ---------
+Dans le repertoire de du projet (où se trouve le fichier pom.xml) :
 
+mv tomcat-users.xml /etc/tomcat/conf/tomcat-users.xml
 
-Create file /etc/apache2/mods-available/jk.conf with the following content:
-JkWorkersFile	/etc/apache2/workers.properties
-JkShmFile	/var/log/apache2/mod_jk.shm
-JkLogFile	/var/log/apache2/mod_jk.log
-JkLogLevel	info
-
-a2enmod jk
-
-Add mount point to /etc/apache2/sites-available/default:
-<VirtualHost *:80>
-	...
-	JkMount		/examples/* worker1
-	...
-</VirtualHost>
-
-Uncomment the following line in /etc/tomcat6/server.xml:
-<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
+vim /etc/maven/settings.xml     
+ajouter le server suivant entre <servers> </servers>  :
+<server>
+        <id>mytomcat</id>
+        <username>tomcat</username>
+        <password>tomcat</password>
+</server>
 
 /etc/init.d/tomcat7 restart
-/etc/init.d/apache2 restart
+mvn clean
+mvn install
+mvn tomcat7:deploy
