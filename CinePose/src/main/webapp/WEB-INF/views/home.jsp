@@ -15,26 +15,29 @@
 		<h1>Classement</h1>
 		<!--  Initialisation de la carte  -->
 		<script>initialize();</script>
-		
-		<c:if test="${not empty cinemas}">
-			<% int i = 1; %>
-			<c:forEach var="cinema" items="${rating}">
-				<p>
-					<b><% out.print(i); %>. ${cinema.getName()}</b><br>
-					Adresse : <i>${cinema.getAddress()}</i><br>
-					Note : ${cinema.getMark()}<br>			
-					Avis : ${cinema.getLastComment()}<br>
-				</p>
-				<script>
-					var cinemaName = "${cinema.getName()}";
-					var comment = "${cinema.getAddress()}";
-					var mark = "${cinema.getMark()}";
-					addMarkers(${cinema.getLatitude()}, ${cinema.getLongitude()}, cinemaName, comment, mark);
-				</script>
 
-				<% i++; %>
-			</c:forEach>
-		</c:if>
+		<div id="target" class="mousescroll">		
+		<c:if test="${not empty cinemas}">
+				<% int i = 1; %>
+				<c:forEach var="cinema" items="${rating}">
+					<p>
+						<b><% out.print(i); %>. ${cinema.getName()}</b><br>
+						Adresse : <i>${cinema.getAddress()}</i><br>
+						Note : ${cinema.getMark()}<br>			
+						Avis : ${cinema.getLastComment()}<br>
+					</p>
+					<script>
+						var cinemaName = "${cinema.getName()}";
+						var comment = "${cinema.getAddress()}";
+						var mark = "${cinema.getMark()}";
+						addMarkers(${cinema.getLatitude()}, ${cinema.getLongitude()}, cinemaName, comment, mark);
+					</script>
+	
+					<% i++; %>
+				</c:forEach>
+			</c:if>
+		</div>
+		<div id="log"></div>
 	</aside>
 </section>
 

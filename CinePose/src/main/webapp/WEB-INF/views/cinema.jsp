@@ -15,32 +15,39 @@
 		<b>Nombre de Salles :</b> ${cinema.getSalleNb()}<br>
 		<b>Détail des
 			notes : </b><br>
-		<table>
-			<tr>
-				<td>Choix :</td>
-				<td>${cinema.getChoiceMark()}</td>
-			</tr>
-			<tr>
-				<td>Propreté :</td>
-				<td>${cinema.getCleanMark()}</td>
-			</tr>
-			<tr>
-				<td>Confort :</td>
-				<td>${cinema.getConfortMark()}</td>
-			</tr>
-			<tr>
-				<td>Bruit :</td>
-				<td>${cinema.getNoiseMark()}</td>
-			</tr>
-			<tr>
-				<td>Prix :</td>
-				<td>${cinema.getPriceMark()}</td>
-			</tr>
-			<tr>
-				<td><b>Total :</b></td>
-				<td><b>${cinema.getMark()}</b></td>
-			</tr>
-		</table>
+		<div id="notes">
+			<table>
+				<tr>
+					<td>Choix :</td>
+					<td>${cinema.getChoiceMark()}</td>
+					<td><span class="eval_bar_cinema"><span class="eval_bar_inner" style="width:${cinema.getChoiceMark()*20.0}%;"> </span></span></td>
+				</tr>
+				<tr>
+					<td>Propreté :</td>
+					<td>${cinema.getCleanMark()}</td>
+					<td><span class="eval_bar_cinema"><span class="eval_bar_inner" style="width:${cinema.getCleanMark()*20.0}%;"> </span></span></td>
+				</tr>
+				<tr>
+					<td>Confort :</td>
+					<td>${cinema.getConfortMark()}</td>
+					<td><span class="eval_bar_cinema"><span class="eval_bar_inner" style="width:${cinema.getConfortMark()*20.0}%;"> </span></span></td>
+				</tr>
+				<tr>
+					<td>Bruit :</td>
+					<td>${cinema.getNoiseMark()}</td>
+					<td><span class="eval_bar_cinema"><span class="eval_bar_inner" style="width:${cinema.getNoiseMark()*20.0}%;"> </span></span></td>
+				</tr>
+				<tr>
+					<td>Prix :</td>
+					<td>${cinema.getPriceMark()}</td>
+					<td><span class="eval_bar_cinema"><span class="eval_bar_inner" style="width:${cinema.getPriceMark()*20.0}%;"> </span></span></td>
+				</tr>
+			</table>
+		</div>
+		<div id="average">
+			Total :<br><b>${cinema.getMark()}</b>/5
+		</div>
+
 	</aside>
 
 	<div id="avis">
@@ -49,33 +56,40 @@
 			<% int i = 1; %>
 			<c:forEach var="avis" items="${cinema.getAvis()}">
 				<div class="result">
-					<b>Notes : </b><br>
-					<table>
-						<tr>
-							<td>Choix :</td>
-							<td>${avis.getChoice()}</td>
-						</tr>
-						<tr>
-							<td>Propreté :</td>
-							<td>${avis.getClean()}</td>
-						</tr>
-						<tr>
-							<td>Confort :</td>
-							<td>${avis.getConfort()}</td>
-						</tr>
-						<tr>
-							<td>Bruit :</td>
-							<td>${avis.getNoise()}</td>
-						</tr>
-						<tr>
-							<td>Prix :</td>
-							<td>${avis.getPrice()}</td>
-						</tr>
-						<tr>
-							<td><b>Total :</b></td>
-							<td><b>${avis.getMark()}</b></td>
-						</tr>
-					</table>
+					<div id="notes">
+						<b>Notes : </b><br>
+			
+						<table>
+							<tr>
+								<td>Choix :</td>
+								<td>${avis.getChoice()}</td>
+								<td><span class="eval_bar"><span class="eval_bar_inner" style="width:${cinema.getChoiceMark()*20.0}%;"> </span></span></td>
+							</tr>
+							<tr>
+								<td>Propreté :</td>
+								<td>${avis.getClean()}</td>
+								<td><span class="eval_bar"><span class="eval_bar_inner" style="width:${cinema.getCleanMark()*20.0}%;"> </span></span></td>
+							</tr>
+							<tr>
+								<td>Confort :</td>
+								<td>${avis.getConfort()}</td>
+								<td><span class="eval_bar"><span class="eval_bar_inner" style="width:${cinema.getConfortMark()*20.0}%;"> </span></span></td>
+							</tr>
+							<tr>
+								<td>Bruit :</td>
+								<td>${avis.getNoise()}</td>
+								<td><span class="eval_bar"><span class="eval_bar_inner" style="width:${cinema.getNoiseMark()*20.0}%;"> </span></span></td>
+							</tr>
+							<tr>
+								<td>Prix :</td>
+								<td>${avis.getPrice()}</td>
+								<td><span class="eval_bar"><span class="eval_bar_inner" style="width:${cinema.getPriceMark()*20.0}%;"> </span></span></td>
+							</tr>
+						</table>
+					</div>
+					<div id="average">
+						Total :<br><b>${avis.getMark()}</b>/5
+					</div>
 					<br> <b>Remarque : </b> ${avis.getComment()}
 				</div>
 			</c:forEach>

@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <section>
-	<div id="add_form">
+	<div class="add_form">
 		<form id="searchCinemaForm" name="searchCinemaForm" method="post" action="javascript:sendSearchFormData()">
 			<h1>Rechercher un Cinéma</h1>
 			<p>Cette page vous permet de rechercher un cinéma par nom et/ou
@@ -30,34 +30,51 @@
 			<c:forEach var="cinema" items="${cinemas}">
 				<div class="result">
 					<h3><a href="javascript:openLink('cinema?cinema_name=${cinema.getName()}')">${cinema.getName()}</a></h3>
-					<b>Notes : </b>
+
+					<div id="cineAddress">
 						<table>
-						<tr>
-							<td>Choix :</td>
-							<td>${cinema.getChoiceMark()}</td>
-						</tr>
-						<tr>
-							<td>Propreté :</td>
-							<td>${cinema.getCleanMark()}</td>
-						</tr>
-						<tr>
-							<td>Confort :</td>
-							<td>${cinema.getConfortMark()}</td>
-						</tr>
-						<tr>
-							<td>Bruit :</td>
-							<td>${cinema.getNoiseMark()}</td>
-						</tr>
-						<tr>
-							<td>Prix :</td>
-							<td>${cinema.getPriceMark()}</td>
-						</tr>
-						<tr>
-							<td><b>Total :</b></td>
-							<td><b>${cinema.getMark()}</b></td>
-						</tr>
-					</table>
-					<b>Dernier Avis : </b> ${cinema.getLastComment()}
+							<tbody>
+								<tr>
+									<td>&nbsp;<b>Adresse</b></td>
+									<td><i>128 Avenue de France, Paris, France</i></td>
+								</tr>									
+							</tbody>
+						</table>
+					</div>
+					<div id="notes">
+						<b>Notes : </b>
+							<table>
+							<tr>
+								<td>Choix :</td>
+								<td>${cinema.getChoiceMark()}</td>
+								<td><span class="eval_bar"><span class="eval_bar_inner" style="width:${cinema.getChoiceMark()*20.0}%;"> </span></span></td>
+							</tr>
+							<tr>
+								<td>Propreté :</td>
+								<td>${cinema.getCleanMark()}</td>
+								<td><span class="eval_bar"><span class="eval_bar_inner" style="width:${cinema.getCleanMark()*20.0}%;"> </span></span></td>
+							</tr>
+							<tr>
+								<td>Confort :</td>
+								<td>${cinema.getConfortMark()}</td>
+								<td><span class="eval_bar"><span class="eval_bar_inner" style="width:${cinema.getConfortMark()*20.0}%;"> </span></span></td>
+							</tr>
+							<tr>
+								<td>Bruit :</td>
+								<td>${cinema.getNoiseMark()}</td>
+								<td><span class="eval_bar"><span class="eval_bar_inner" style="width:${cinema.getNoiseMark()*20.0}%;"> </span></span></td>
+							</tr>
+							<tr>
+								<td>Prix :</td>
+								<td>${cinema.getPriceMark()}</td>
+								<td><span class="eval_bar"><span class="eval_bar_inner" style="width:${cinema.getPriceMark()*20.0}%;"> </span></span></td>
+							</tr>
+						</table>
+					</div>
+					<div id="average">
+							Total :<br><b>${cinema.getMark()}</b>/5
+					</div>
+					<p><b>Dernier Avis : </b> ${cinema.getLastComment()}</p>
 				</div>
 			</c:forEach>
 		</c:if>

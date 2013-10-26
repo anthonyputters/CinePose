@@ -14,6 +14,15 @@ function openLink(givenUrl) {
 	});
 }
 
+function hideAddCinemaForm() {
+	jQuery('#addCinemaForm').hide();	
+}
+
+function toogleAddForm() {
+	jQuery('#addCinemaForm').toggle(400);
+	jQuery('#addAvisForm').toggle(400);
+}
+
 function validateAddCinemaForm() {
 	var validateName = validateNameFromAddCinemaForm();
 	var validateAddress = validateAddressFromAddCinemaForm();
@@ -94,7 +103,7 @@ function sendSearchFormData() {
 	openLink("searchCinema?name="+name+"&address="+address);
 }
 
-/* Fonctions relatives à la carte google map sur la page d'acceuil */
+/* Fonctions relatives aux cartes générées à l'aide de google map */
 var map;
 
 function initialize() {

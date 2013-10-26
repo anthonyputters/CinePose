@@ -28,9 +28,8 @@
 				<div id="description">
 					Salle trop petite, siège peu confortable, grâce aux moteurs de
 					recherche actuels, on peut trouver les cinémas les plus proches...
-					mais pas forcément les plus confortables!! <br> La qualité d'une séance
-					de cinéma ne se jauge pas seulement au film seul, mais également à
-					la salle même. <br> Trouvez le cinéma parfait, c'est possible!!
+					mais pas forcément les plus confortables ! <br> La qualité d'une séance
+					ne se résume pas au film. Trouvez le cinéma parfait, c'est possible!!
 				</div>
 			</header>
 
