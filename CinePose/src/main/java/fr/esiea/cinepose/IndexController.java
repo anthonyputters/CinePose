@@ -38,6 +38,8 @@ public class IndexController {
 			ServiceAvis.addAvis(ugc_montparnasse, 4, 3, 3, 5, 4, "Un cinéma acceuillant, dans un très belle endroit !");
 			ServiceAvis.addAvis(mk2_bibliotheque, 4, 5, 3, 4, 5, "Beaucoup de choix et de Salles. Tarifs très intéressants.");
 			ServiceAvis.addAvis(mk2_bibliotheque, 5, 5, 3, 4, 4, "Salles très confortables.");
+			
+			Persistence.writeData();
 		}
 		
 		return "index";

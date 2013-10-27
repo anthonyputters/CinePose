@@ -23,6 +23,8 @@ le repertoire : str/main/webapp/resources/js/
 Fonctionnalités :
 - Affichage d'un classement des cinémas les mieux notés.
 - Affichage de leur position sur une carte de Paris.
+- Recherche des positions correspondant aux adresses avec
+Google Map
 - Ajout de Cinéma dans la base de données.
 - Ajout d'avis dans la base de données.
 - Visualisation des informations relatives à un cinéma.

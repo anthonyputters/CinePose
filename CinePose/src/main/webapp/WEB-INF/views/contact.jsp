@@ -4,7 +4,7 @@
 	<div class="add_form">
 		<!--*même div que pour les autres*-->
 		<h1>Contactez-nous</h1>
-		<p>Contactez nous pour d'éventuelles questions</p>
+		<p>Contactez nous pour toute question ou remarque</p>
 		<form method="POST" action="mailto:anthony.putters@gmail.com">
 			<table style="width:400px">
 				<tr>
